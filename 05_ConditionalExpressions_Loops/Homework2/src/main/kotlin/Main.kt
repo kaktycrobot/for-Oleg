@@ -1,10 +1,10 @@
 fun main() {
 
     println("Enter number")
-    var inputNumber: Int = readLine()?.toIntOrNull() ?: return
+    var inputNumber: Int = readLine()?.toIntOrNull() ?: 0
     while (inputNumber <= 0) {
         println("Number must be greater than zero\nEnter number again")
-        inputNumber = readLine()?.toIntOrNull() ?: return
+        inputNumber = readLine()?.toIntOrNull() ?: 0
     }
     println("for $inputNumber, the Fibonacci number is " + sumFibonacci(inputNumber))
 }
