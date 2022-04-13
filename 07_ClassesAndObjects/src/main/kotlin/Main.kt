@@ -11,9 +11,9 @@ fun main() {
     printInfo(lg)
 
     samsung.switchOn()
-    println(samsung.power)
+    println(samsung.powerOn)
     samsung.switchOf()
-    println(samsung.power)
+    println(samsung.powerOn)
 
 
 }

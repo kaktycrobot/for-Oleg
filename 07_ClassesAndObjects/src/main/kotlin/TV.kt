@@ -6,15 +6,27 @@ class TV(val brand: String, val model: String, val diagonal: Int, val color: Str
         diagonal = diagonal,
         color = color
     )
-    var power = false
-    private set
-        fun switchOn() {
-            println("TV on")
-            power = true
-        }
-        fun switchOf() {
-            println("TV off")
-            power = false
-        }
+
+    var powerOn = false
+        private set
+
+    fun switchOn() {
+        println("TV on")
+        powerOn = true
+    }
+
+    fun switchOf() {
+        println("TV off")
+        powerOn = false
+    }
+
+    var volume: Int = 0
+    fun volumeUp() {
+
+    }
+
+    companion object {
+        const val volumeMax = 100
+    }
 
 }
