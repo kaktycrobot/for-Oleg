@@ -11,12 +11,12 @@ object ChannelsList {
         "God TV UK",
         "MTA 1",
         "EuroNews",
-        "Daystar TV",
+        "Daystar TV"
     )
 
-    fun getRandomChannels(): MutableList<String> {
+    fun getRandomChannels(): List<String> {
         val shuffledChannels = channelList.shuffled()
-        return shuffledChannels.subList(0, Random.nextInt(3, 9)).toMutableList()
+        return shuffledChannels.subList(0, Random.nextInt(3, 9))
     }
 
 }
