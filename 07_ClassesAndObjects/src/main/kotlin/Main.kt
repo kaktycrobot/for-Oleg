@@ -1,19 +1,62 @@
 fun main() {
-    val samsung = TV(descriptor = "Samsung" to "UE70TQW120SV", 70)
+    val samsung = TV(descriptor = "Samsung" to "UE70TQW120SV", 70, "Grey")
+    val xiaomi = TV(descriptor = "Xiaomi" to "Mi TV Q1", 75)
     val lg = TV(brand = "LG", model = "43UP75006LF", diagonal = 43, color = "White")
+    val phillips = TV(brand = "Phillips", model = "55OLED706/12", diagonal = 55)
+    val huawei = TV(brand = "HUAWEI", model = "HD65KAN9A", diagonal = 65)
 
-
-    fun printInfo(tv: TV) {
+    fun printAboutTv(tv: TV) {
         println("Brand - ${tv.brand}, Model - ${tv.model}, Diagonal - ${tv.diagonal}, Color - ${tv.color}")
     }
 
-    printInfo(samsung)
-    printInfo(lg)
+    fun testTv(tv: TV) {
+        printAboutTv(tv)
+        Thread.sleep(3000)
+        tv.printChannelList()
+        Thread.sleep(5000)
+        tv.volumeUp(15)
+        Thread.sleep(3000)
+        tv.switchOn()
+        Thread.sleep(3000)
+        tv.volumeUp(50)
+        Thread.sleep(3000)
+        tv.volumeUp(90)
+        Thread.sleep(3000)
+        tv.volumeDown(46)
+        Thread.sleep(3000)
+        tv.volumeDown(150)
+        Thread.sleep(3000)
+        tv.switchChannel(5)
+        Thread.sleep(3000)
+        tv.switchOff()
+        Thread.sleep(3000)
+        tv.volumeDown(34)
+        Thread.sleep(3000)
+        tv.switchChannel(7)
+        Thread.sleep(3000)
+        tv.switchChannelUp()
+        Thread.sleep(3000)
+        tv.switchChannelUp()
+        Thread.sleep(2000)
+        tv.switchChannelUp()
+        Thread.sleep(2000)
+        tv.switchChannelUp()
+        Thread.sleep(2000)
+        tv.switchOff()
+        Thread.sleep(2000)
+        tv.switchChannelDown()
+        Thread.sleep(2000)
+        tv.switchChannel(0)
+        Thread.sleep(2000)
+        tv.switchChannelDown()
+        Thread.sleep(2000)
+        tv.switchChannelDown()
+        Thread.sleep(2000)
+    }
 
-    samsung.switchOn()
-    println(samsung.powerOn)
-    samsung.switchOf()
-    println(samsung.powerOn)
-
-
+    testTv(samsung)
+    testTv(xiaomi)
+    testTv(lg)
+    testTv(phillips)
+    testTv(huawei)
 }
