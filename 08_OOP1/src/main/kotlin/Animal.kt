@@ -6,7 +6,7 @@ open class Animal(
     var weight: Int,
     val maxAge: Int = 12
 ) {
-    var currentAge = (2..9).random()
+    var currentAge = (6..9).random()
     var isTooOld: Boolean = currentAge >= maxAge
 
     open fun move() {
@@ -38,6 +38,7 @@ open class Animal(
             weight = (1..5).random(),
             maxAge
         )
+        currentAge = 0
         println(
             "$name gives birth\n$name cub is born, its energy is ${newAnimal.energy}, " +
                     "its weight is ${newAnimal.weight}, its maximum age is ${newAnimal.maxAge}"

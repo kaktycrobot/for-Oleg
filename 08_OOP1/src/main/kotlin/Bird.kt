@@ -1,5 +1,3 @@
-import kotlin.random.Random
-
 class Bird(
     name: String,
     energy: Int,
@@ -7,8 +5,10 @@ class Bird(
     maxAge: Int
 ) : Animal(name, energy, weight, maxAge) {
     override fun move() {
-        super.move()
-        println("$name is flying")
+        if (energy > 5 && weight > 1) {
+            super.move()
+            println("$name is flying")
+        } else println("$name too weak")
     }
 
     override fun birth(): Bird {
@@ -18,8 +18,11 @@ class Bird(
             weight = (1..5).random(),
             maxAge
         )
-        println("$name gives birth\n$name cub is born, its energy is ${newAnimal.energy}, " +
-                "its weight is ${newAnimal.weight}, its maximum age is ${newAnimal.maxAge}")
+        currentAge = 0
+        println(
+            "$name gives birth\n$name cub is born, its energy is ${newAnimal.energy}, " +
+                    "its weight is ${newAnimal.weight}, its maximum age is ${newAnimal.maxAge}"
+        )
         return newAnimal
     }
 }
