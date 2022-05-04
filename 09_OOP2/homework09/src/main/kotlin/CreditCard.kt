@@ -8,9 +8,10 @@ class CreditCard : BankCard(10000) {
         val replenishmentAmount = readLine()?.toIntOrNull() ?: 0
         if (balance >= creditLimit) ownFunds += replenishmentAmount
         else {
-            ownFunds = balance + replenishmentAmount - creditLimit
+            ownFunds = ownFunds + balance + replenishmentAmount - creditLimit
             balance = creditLimit
         }
+        generalFunds = balance + ownFunds
     }
 
     override fun pay() {
@@ -20,16 +21,15 @@ class CreditCard : BankCard(10000) {
         else if (paymentAmount >= ownFunds) {
             balance += (ownFunds - paymentAmount)
             ownFunds = 0
-        }
-        else ownFunds -= paymentAmount
+        } else ownFunds -= paymentAmount
+        generalFunds = balance + ownFunds
     }
 
-
     override fun getBalanceInfo() {
-        println("Balance: $balance")
+        println("Credit card balance: $balance")
     }
 
     override fun getAvailableFundsInfo() {
-        println("Available funds: $generalFunds \nCredit funds: $balance \nOwn funds $ownFunds")
+        println("Available credit card funds: $generalFunds \nCredit funds: $balance \nOwn funds $ownFunds")
     }
 }
