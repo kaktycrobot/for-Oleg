@@ -1,5 +1,5 @@
-class CreditCard : BankCard(10000) {
-    private val creditLimit = 10000
+open class CreditCard(balance: Int) : BankCard(10000) {
+    open val creditLimit = 10000
     var ownFunds = 0
     var generalFunds = balance + ownFunds
 
