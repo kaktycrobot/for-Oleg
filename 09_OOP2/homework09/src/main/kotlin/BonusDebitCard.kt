@@ -6,7 +6,7 @@ class BonusDebitCard : DebitCard(0) {
         if (paymentAmount > balance) println("Insufficient funds")
         else
             if (bonus > 0) {
-                println("You have ${bonus} bonus point\nDo you want to use bonus points?\n1. Yes\n2. No")
+                println("You have $bonus bonus point\nDo you want to use bonus points?\n1. Yes\n2. No")
                 when (readLine()?.toIntOrNull() ?: 0) {
                     1 -> if (bonus >= paymentAmount) bonus -= paymentAmount
                     else {
@@ -26,7 +26,11 @@ class BonusDebitCard : DebitCard(0) {
 
     }
 
+    override fun getBalanceInfo() {
+        println("\"BONUS DEBIT CARD\" balance: $balance")
+    }
+
     override fun getAvailableFundsInfo() {
-        println("Available debit card funds: $balance\nBonus points: ${bonus}")
+        println("\"BONUS DEBIT CARD\"\nAvailable funds: $balance\nBonus points: $bonus")
     }
 }

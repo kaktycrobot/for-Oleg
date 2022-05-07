@@ -1,4 +1,4 @@
-open class DebitCard(balance: Int) : BankCard(0) {
+open class DebitCard(balance: Int) : BankCard(balance) {
     override fun topUpTheCard() {
         println("How much do you want to deposit?")
         val replenishmentAmount = readLine()?.toIntOrNull() ?: 0
@@ -13,10 +13,10 @@ open class DebitCard(balance: Int) : BankCard(0) {
     }
 
     override fun getBalanceInfo() {
-        println("Debit card balance: $balance")
+        println("\"DEBIT CARD\" balance: $balance")
     }
 
     override fun getAvailableFundsInfo() {
-        println("Available debit card funds: $balance")
+        println("\"DEBIT CARD\"\nAvailable funds: $balance")
     }
 }

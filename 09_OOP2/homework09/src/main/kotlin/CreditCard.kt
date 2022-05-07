@@ -1,4 +1,4 @@
-open class CreditCard(balance: Int) : BankCard(10000) {
+open class CreditCard(balance: Int) : BankCard(balance) {
     open val creditLimit = 10000
     var ownFunds = 0
     var generalFunds = balance + ownFunds
@@ -26,10 +26,10 @@ open class CreditCard(balance: Int) : BankCard(10000) {
     }
 
     override fun getBalanceInfo() {
-        println("Credit card balance: $balance")
+        println("\"CREDIT CARD\" balance: $balance")
     }
 
     override fun getAvailableFundsInfo() {
-        println("Available credit card funds: $generalFunds \nCredit funds: $balance \nOwn funds $ownFunds")
+        println("\"CREDIT CARD\"\nAvailable funds: $generalFunds \nCredit funds: $balance \nOwn funds $ownFunds")
     }
 }

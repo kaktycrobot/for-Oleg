@@ -12,15 +12,16 @@ class CreditCardCashback : CreditCard(5000) {
             balance += (ownFunds - paymentAmount)
             ownFunds = 0
         } else ownFunds -= paymentAmount
-        generalFunds = balance + ownFunds
         if (paymentAmount >= 5000) {
             cashback += (paymentAmount * potentialCashback).toInt()
             ownFunds += cashback
             println("Your cashback is $cashback")
         }
         totalCashback += cashback
+        generalFunds = balance + ownFunds
     }
+
     override fun getAvailableFundsInfo() {
-        println("Available credit card funds: $generalFunds \nCredit funds: $balance \nOwn funds $ownFunds\nYour total cashback is: $totalCashback")
+        println("\"CASHBACK CREDIT CARD\"\nAvailable funds: $generalFunds \nCredit funds: $balance \nOwn funds $ownFunds\nYour total cashback is: $totalCashback")
     }
 }
