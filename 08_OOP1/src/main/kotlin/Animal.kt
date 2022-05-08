@@ -7,7 +7,10 @@ open class Animal(
     val maxAge: Int = 12
 ) {
     var currentAge = (6..9).random()
-    var isTooOld: Boolean = currentAge >= maxAge
+    val isTooOld: Boolean
+        get() {
+            return currentAge >= maxAge
+        }
 
     open fun move() {
         if (energy > 5 && weight > 1) {

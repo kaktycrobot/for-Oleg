@@ -32,10 +32,11 @@ open class NatureReserve {
                     }
                     a++
                 }
-            }
-            zoo.forEach {
-                if (it.isTooOld)
-                    println("${it.name} died at the age of ${it.maxAge}")
+                zoo.forEach {
+                    if (it.isTooOld)
+                        println("${it.name} died at the age of ${it.maxAge}")
+                }
+                zoo.removeAll { it.isTooOld }
             }
             zoo.removeAll { it.isTooOld }
         }
