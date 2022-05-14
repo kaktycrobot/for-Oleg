@@ -1,12 +1,9 @@
 class Stack<T> {
-    private val elements: MutableList<T> = mutableListOf()
-    fun push(item: T) = elements.add(item)
+    private val stack: MutableList<T> = mutableListOf()
+    fun push(item: T) = stack.add(item)
     fun pop(): T? {
-        val item = elements.lastOrNull()
-        if (!isEmpty()) {
-            elements.removeAt(elements.size - 1)
-        }
-        return item
+        if (stack.size > 0) return stack.removeLast()
+        return null
     }
-    fun isEmpty() = elements.isEmpty()
+    fun isEmpty() = stack.isEmpty()
 }
