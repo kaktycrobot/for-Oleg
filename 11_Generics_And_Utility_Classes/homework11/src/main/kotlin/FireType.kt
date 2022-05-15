@@ -1,5 +1,9 @@
-sealed class FireType(val numberOfShots: Int) {
-    object SingleShot : FireType(1)
+sealed class FireType {
+    object SingleShot : FireType() {}
 
-    data class Burst(val burstSize: Int)
+    data class Burst(val burstLength: Int) : FireType() {
+        fun getLength(): Int {
+            return burstLength
+        }
+    }
 }
