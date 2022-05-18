@@ -5,7 +5,7 @@ abstract class AbstractWeapon(
     var magazine: Stack<Ammo> = Stack()
     var magazineIsEmpty: Boolean = magazine.isEmpty()
 
-    abstract fun createPatron() : Ammo
+    abstract fun createPatron(): Ammo
 
     fun reload(): Stack<Ammo> {
         for (i in 1..maxAmmo) {
@@ -14,7 +14,22 @@ abstract class AbstractWeapon(
         println("Magazine is reloaded")
         return magazine
     }
-    fun getPatronForShot() {
-        magazine.pop()
+
+    fun getPatronForShot(burstLength: Int): Stack<Ammo> {
+        return if (!magazineIsEmpty) {
+            when (fireType) {
+                is FireType.SingleShot -> {
+                    magazine.pop()
+                    magazine
+                }
+                is FireType.Burst -> {
+                    for (i in 1..fireType.burstLength) magazine.pop()
+                    magazine
+                }
+            }
+        } else {
+            reload()
+            magazine
+        }
     }
 }

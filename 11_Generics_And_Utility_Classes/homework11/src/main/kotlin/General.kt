@@ -1,4 +1,4 @@
-class General : AbstractWarrior {
+class General : AbstractWarrior() {
     override val maxHealth = 200
     override val dodgeChance: Int
         get() = TODO("Not yet implemented")

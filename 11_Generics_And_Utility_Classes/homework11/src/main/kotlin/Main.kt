@@ -20,13 +20,13 @@ fun main() {
     pistol.reload()
     println("magazine is empty - ${pistol.magazine.isEmpty()}")
     pistol.magazine.pop()
-        ?.let { println("damage - ${it.damage}, chance - ${it.criticalDamageChance}, ratio - ${it.ratio}, currdmg - ${it.currentDamage()}") }
+        ?.let { println("damage - ${it.damage}, chance - ${it.criticalDamageChance}, ratio - ${it.ratio}, currdmg - ${currentDamage(Ammo.PISTOLBULLET)}") }
     println("magazine is empty - ${pistol.magazine.isEmpty()}")
     pistol.magazine.pop()
-        ?.let { println("damage - ${it.damage}, chance - ${it.criticalDamageChance}, ratio - ${it.ratio}, currdmg - ${it.currentDamage()}") }
+        ?.let { println("damage - ${it.damage}, chance - ${it.criticalDamageChance}, ratio - ${it.ratio}, currdmg - ${currentDamage(Ammo.PISTOLBULLET)}") }
     println("magazine is empty - ${pistol.magazine.isEmpty()}")
     pistol.magazine.pop()
-        ?.let { println("damage - ${it.damage}, chance - ${it.criticalDamageChance}, ratio - ${it.ratio}, currdmg - ${it.currentDamage()}") }
+        ?.let { println("damage - ${it.damage}, chance - ${it.criticalDamageChance}, ratio - ${it.ratio}, currdmg - ${currentDamage(Ammo.PISTOLBULLET)}") }
 }
 
 fun Int.checkSuccess(): Boolean = this >= Random.nextInt(0, 100)

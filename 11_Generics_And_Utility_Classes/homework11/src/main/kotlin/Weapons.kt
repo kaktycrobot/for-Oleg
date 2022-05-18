@@ -5,7 +5,7 @@ object Weapons {
         fireType = FireType.SingleShot
     ) {
         override fun createPatron(): Ammo {
-            return Ammo.PistolBullet
+            return Ammo.PISTOLBULLET
         }
     }
 
@@ -14,7 +14,7 @@ object Weapons {
         fireType = FireType.SingleShot
     ) {
         override fun createPatron(): Ammo {
-            return Ammo.RevolverBullet
+            return Ammo.REVOLVERBULLET
         }
     }
 
@@ -23,7 +23,7 @@ object Weapons {
         fireType = FireType.SingleShot,
     ) {
         override fun createPatron(): Ammo {
-            return Ammo.SniperBullet
+            return Ammo.SNIPERBULLET
         }
     }
 
@@ -32,7 +32,7 @@ object Weapons {
         fireType = FireType.Burst(3),
     ) {
         override fun createPatron(): Ammo {
-            return Ammo.RifleBullet
+            return Ammo.RIFLEBULLET
         }
     }
 }
