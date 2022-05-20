@@ -4,9 +4,10 @@ enum class Ammo(
     val ratio: Double
 ) {
     PISTOLBULLET(20, 40, 1.1),
-    REVOLVERBULLET(60, 35, 2.5),
-    SNIPERBULLET(80, 60, 1.50),
-    RIFLEBULLET(50, 25, 1.95);
+    REVOLVERBULLET(65, 35, 2.5),
+    SNIPERBULLET(88, 60, 1.50),
+    RIFLEBULLET(23, 25, 1.95),
+    UZIBULLET(10,20, 1.2);
 }
 
 fun currentDamage(ammoType: Ammo): Int {

@@ -5,5 +5,6 @@ class Stack<T> {
         if (stack.size > 0) return stack.removeLast()
         return null
     }
+
     fun isEmpty() = stack.isEmpty()
 }
