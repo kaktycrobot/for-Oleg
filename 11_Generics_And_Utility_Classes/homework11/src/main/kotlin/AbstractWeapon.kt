@@ -5,10 +5,6 @@ abstract class AbstractWeapon(
     val ammoType: Ammo
 ) {
     var magazine: Stack<Ammo> = Stack()
-    val magazineIsEmpty: Boolean
-        get() {
-            return magazine.isEmpty()
-        }
 
     private fun createPatron(): Ammo {
         return ammoType
@@ -29,12 +25,18 @@ abstract class AbstractWeapon(
     fun getPatronForShot(): Stack<Ammo> {
         return when (fireType) {
             is FireType.SingleShot -> {
-                magazine.pop()
-                magazine
+                if (magazine.size() < 1) throw NoAmmoException()
+                else {
+                    magazine.pop()
+                    magazine
+                }
             }
             is FireType.Burst -> {
-                repeat(fireType.burstLength) { magazine.pop() }
-                magazine
+                if (magazine.size() < fireType.burstLength) throw NoAmmoException()
+                else {
+                    repeat(fireType.burstLength) { magazine.pop() }
+                    magazine
+                }
             }
         }
     }

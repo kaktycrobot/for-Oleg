@@ -6,5 +6,7 @@ class Stack<T> {
         return null
     }
 
+    fun size() = stack.size
+
     fun isEmpty() = stack.isEmpty()
 }

@@ -10,10 +10,7 @@ abstract class AbstractWarrior : Warrior {
     override fun attack(warrior: Warrior) {
         println("$name goes into battle!")
         Thread.sleep(1500)
-        if (weapon.magazineIsEmpty) {
-            print("${weapon.name} magazine is empty. Reload..   ")
-            weapon.reload()
-        } else {
+        try {
             weapon.getPatronForShot()
             println("$name Attacks the ${warrior.name} with a ${weapon.name}")
             Thread.sleep(1500)
@@ -31,6 +28,9 @@ abstract class AbstractWarrior : Warrior {
                 println("Miss.")
                 Thread.sleep(1500)
             }
+        } catch (e: NoAmmoException) {
+            print("${weapon.name} magazine is empty. Reload..   ")
+            weapon.reload()
         }
     }
 
